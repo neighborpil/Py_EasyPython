@@ -1,0 +1,13 @@
+#user-agent
+#어떤 웹서버는 특정 브라우저가 아니면 정보를 주지 않는다
+#http 요청시 헤더정보를 브라우저 정보를 바꿔서 요청해야 한다
+#이 값은 http요청시 헤더의 user-agent에 담겨 있다
+#원하는 브라우저를 켠 후 'http://whatsmyuseragent.com/'에 접속하여 확인 가능하다
+
+import requests
+#크롬
+#headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
+#익스11
+headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'}
+r = requests.get('http://en.wikipedia.org/wiki/Main_Page', headers=headers)
+print(r.text)
